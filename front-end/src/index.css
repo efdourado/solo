@@ -13,6 +13,13 @@
   --green-1000: hsl(141deg 75% 2.5%);
   --green-1000-25: hsl(141deg 75% 2.5% / 25%);
 
+  /*black — background*/
+  --color0: #4b3832;	/*(75,56,50)*/
+	--color1: #5b63b7;	/*(133,68,66)*/
+	--color2: #9296f0;	/*(255,244,230)*/
+	--color3: #cbccff;	/*(60,47,47)*/
+  /*white — text*/
+
   --transition-duration: 200ms;
   --transition-function: ease;
 
@@ -29,8 +36,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--green-1000);
-  color: #f0fcf4;
+  background-color: black;
+  color: white;
 }
 a {
   color: inherit;
@@ -54,7 +61,6 @@ img {
 #navbar {
   display: flex;
   background-color: rgba(0, 0, 0, 0.6);
-  color: #f0fcf4;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -62,13 +68,13 @@ img {
   z-index: 10;
 }
 #navbar .navbar-container {
-  width: 96%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
 }
-#navbar .navbar-container .logo {
+.logo {
   height: 30px;
 }
 #navbar .navbar-items {
@@ -102,9 +108,122 @@ img {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+
+#showcase {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: url("../src/public/background.jpg") center center/cover;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: color;
+}
+#showcase .showcase-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#showcase .showcase-container h2 {
+	font-size: 5rem;
+}
+#showcase .showcase-container p {
+	margin: 15px 0;
+	font-size: 1.1rem;
+}
+
+#footer {
+	background: black;
+	color: white;
+	padding: 80px 0;
+}
+#footer .footer-content {
+	display: flex;
+	width: 90%;
+	margin: auto;
+	justify-content: space-between;
+}
+#footer .footer-content .footer-menu {
+	margin: 0 60px;
+	list-style: none;
+}
+#footer .footer-content .footer-menu .footer-menu-item {
+	margin: 25px 0;
+	transition: all 300ms ease;
+}
+#footer .footer-content .footer-menu .footer-menu-item:hover {
+	color: var(--default-green);
+	cursor: pointer;
+}
+#footer .footer-content .footer-menu p {
+	text-transform: uppercase;
+	color: #919496;
+	font-size: 0.8rem;
+}
+
+.socials {
+	display: flex;
+}
+.socials i {
+	margin: 0 20px;
+	font-size: 1.7rem;
+	transition: all 300ms ease;
+}
+.socials i:hover {
+	color: var(--default-green);
+	cursor: pointer;
+}
+
+.footer-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 60%;
+	margin: auto;
+	font-weight: bold;
+	color: #919496;
+	font-size: 0.75rem;
+	padding-top: 50px;
+}
+.footer-info .footer-info-items {
+	display: flex;
+	list-style: none;
+}
+.footer-info .footer-info-items .footer-info-item {
+	margin: 0 10px;
+	transition: all 300ms ease;
+}
+.footer-info .footer-info-items .footer-info-item:hover {
+	color: var(--default-green);
+	cursor: pointer;
+}
+.footer-info .rights .country {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.footer-info .rights .country p {
+	transition: all 300ms ease;
+}
+.footer-info .rights .country p:hover {
+	color: var(--default-green);
+	cursor: pointer;
+}
+.footer-info .rights .country .brazil-flag {
+	height: 20px;
+	width: auto;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
+
+
+
+
 .main {
-  padding-top: 80px;
-  padding: 40px;
+  padding: 80px 40px;
   flex: 1;
   background-image: linear-gradient(
   to bottom, 

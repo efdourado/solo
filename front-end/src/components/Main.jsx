@@ -3,9 +3,42 @@ import ItemList from "./ItemList";
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 
+import logoSpotify from "../assets/logo/spotify-logo2.png";
+import brasilFlag from "../assets/brasil.png";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+
+import { Link } from 'react-router-dom';
+
+
 const Main = ({ type }) => {
   return (
-    <div className="main">
+    <>
+      <nav id="navbar">
+        <div className="navbar-container">
+        <Link to="/">
+          <img src={logoSpotify} alt="logo do Spotify" className="logo" />
+        </Link>
+          <ul className="navbar-items">
+            <li className="navbar-item">Home</li>
+            <li className="navbar-item">Categories</li>
+            <li className="navbar-item">About us</li>
+            <li className="navbar-item">Log In</li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div id="showcase">
+        <div className="showcase-container">
+          <h2>Música para todos.</h2>
+          <p>Milhões de músicas à sua escolha. E nem precisa de cartão de crédito.</p>
+          <button className="btn-primary">Obtenha o Spotify Free</button>
+        </div>
+      </div>
+
+
       {type === "artists" || type === undefined ? (
         <ItemList
           title="Artists"
@@ -14,9 +47,7 @@ const Main = ({ type }) => {
           path="/artists"
           idPath="/artist"
         />
-      ) : (
-        <></>
-      )}
+      ) : null}
 
       {type === "songs" || type === undefined ? (
         <ItemList
@@ -26,10 +57,61 @@ const Main = ({ type }) => {
           path="/songs"
           idPath="/song"
         />
-      ) : (
-        <></>
-      )}
-    </div>
+      ) : null}
+
+
+      <footer id="footer">
+        <div className="footer-content">
+          <img src={logoSpotify} alt="logo do Spotify" className="logo"/>
+          <ul className="footer-menu">
+            <p>Company</p>
+            <li className="footer-menu-item">About</li>
+            <li className="footer-menu-item">Empregos</li>
+            <li className="footer-menu-item">For the record</li>
+          </ul>
+
+          <ul className="footer-menu">
+            <p>Comunidades</p>
+            <li className="footer-menu-item">Para Artistas</li>
+            <li className="footer-menu-item">Desenvolvedores</li>
+            <li className="footer-menu-item">Marcas</li>
+            <li className="footer-menu-item">Investidores</li>
+            <li className="footer-menu-item">Fornecedores</li>
+          </ul>
+
+          <ul className="footer-menu">
+            <p>Links úteis</p>
+            <li className="footer-menu-item">Ajuda</li>
+            <li className="footer-menu-item">Player da Web</li>
+            <li className="footer-menu-item">Aplicativo móvel grátis</li>
+          </ul>
+
+          <div className="socials">
+            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faFacebookF} />
+          </div>
+        </div>
+
+        <div className="footer-info">
+          <ul className="footer-info-items">
+            <li className="footer-info-item">Legal</li>
+            <li className="footer-info-item">Centro de Privacidade</li>
+            <li className="footer-info-item">Política de privacidade</li>
+            <li className="footer-info-item">Cookies</li>
+            <li className="footer-info-item">Sobre anúncios</li>
+          </ul>
+
+          <div className="rights">
+            <div className="country">
+              <p>Brasil</p>
+              <img src={brasilFlag} alt="Br Flag" className="brazil-flag"/>
+            </div>
+            <p>&copy; 2025 Spotify AB</p>
+          </div>
+        </div>
+      </footer>
+    </>
 ); };
 
 export default Main;

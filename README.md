@@ -1,4 +1,4 @@
-###### solo — sum bout music
+###### solo — 
 
 #### structure
 
