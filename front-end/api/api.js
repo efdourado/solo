@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://spotifymodel.onrender.com/api";
+const URL = "https://solo-98r7.onrender.com/api";
 const responseArtists = await axios.get(`${URL}/artists`);
 const responseSongs = await axios.get(`${URL}/songs`);
 
