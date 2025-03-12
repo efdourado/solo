@@ -1,28 +1,34 @@
 import React from "react";
 import ItemList from "./ItemList";
-import { artistArray } from "../assets/database/artists";
-import { songsArray } from "../assets/database/songs";
-
 import logoSpotify from "../assets/logo/spotify-logo2.png";
 import brasilFlag from "../assets/brasil.png";
 
+import { artistArray } from "../assets/database/artists";
+import { songsArray } from "../assets/database/songs";
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
-import { Link } from 'react-router-dom';
-
-
 const Main = ({ type }) => {
+  const [selected, setSelected] = useState("Home");
+
   return (
     <>
       <nav id="navbar">
         <div className="navbar-container">
           <img src={logoSpotify} alt="logo do Spotify" className="logo" />
           <ul className="navbar-items">
-            <li className="navbar-item">Home</li>
-            <li className="navbar-item">Categories</li>
-            <li className="navbar-item">About us</li>
-            <li className="navbar-item">Log In</li>
+            {["Home", "Categories", "About us"].map((item) => (
+              <li
+                key={item}
+                className={`navbar-item ${selected === item ? "active" : ""}`}
+                onClick={() => setSelected(item)}
+              >
+                {item}
+              </li>
+            ))}
+            <button className="btn-secondary">Log In</button>
           </ul>
         </div>
       </nav>

@@ -52,7 +52,6 @@ img {
 }
 
 #root {
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100svh;
@@ -70,6 +69,21 @@ img {
 	font-weight: bold;
   transition: all 300ms ease;
   } .btn-primary:hover {
+      background: var(--light-red);
+      cursor: pointer;
+}
+.btn-secondary {
+  margin-left: 15px;
+  background: transparent;
+	color: white;
+	text-transform: uppercase;
+	padding: 5px 30px;
+	border: 1px solid var(--red);
+	border-radius: 30px;
+	letter-spacing: 1px;
+	font-weight: bold;
+  transition: all 300ms ease;
+  } .btn-secondary:hover {
       background: var(--light-red);
       cursor: pointer;
 }
@@ -98,18 +112,29 @@ img {
       font-weight: bold;
     } #navbar .navbar-items li {
         padding: 0 20px;
-        transition: all 300ms ease;
+        transition: color 300ms ease, border-bottom 300ms ease;
         flex-grow: 1;
         justify-content: center;
-      } #navbar .navbar-items li:hover {
+      } #navbar .navbar-items li:hover, #navbar .navbar-items li.active {
           color: var(--light-red);
-          cursor: pointer;
-        } #navbar .navbar-items li:nth-child(3) {
-            border-right: 1px solid white;
+          border-bottom: 1px solid var(--light-red);
+        }   #navbar .navbar-items li:nth-child(3) {
+              border-right: 1px solid white;
 }
+@media (max-width: 768px) {
+  #navbar .navbar-container {
+    padding: 10px 0;
+  } #navbar .navbar-items {
+      align-items: center;
+      width: 100%;
+    } #navbar .navbar-items li {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+} }
 
 #showcase {
-	height: 55vh;
+	height: clamp(40vh, 55vh, 70vh);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -117,16 +142,27 @@ img {
 	background: url("../src/public/background.jpg") center center/cover;
 	background-color: rgba(0, 0, 0, 0.55);
 	background-blend-mode: color;
+  text-align: center;
   } #showcase .showcase-container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 5%;
     } #showcase .showcase-container h2 {
-        font-size: 5rem;
+        font-size: clamp(2.5rem, 5vw, 5rem);
       } #showcase .showcase-container p {
           margin: 15px 0;
-          font-size: 1rem;
+          font-size: clamp(0.875rem, 2vw, 1.2rem);
+          max-width: 800px;
 }
+@media (max-width: 768px) {
+  #showcase {
+    height: 45vh;
+  } #showcase .showcase-container h2 {
+      font-size: 3rem;
+    } #showcase .showcase-container p {
+        font-size: 1rem;
+} }
 
 #footer {
 	background: black;
