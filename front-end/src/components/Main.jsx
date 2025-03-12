@@ -17,9 +17,7 @@ const Main = ({ type }) => {
     <>
       <nav id="navbar">
         <div className="navbar-container">
-        <Link to="/">
           <img src={logoSpotify} alt="logo do Spotify" className="logo" />
-        </Link>
           <ul className="navbar-items">
             <li className="navbar-item">Home</li>
             <li className="navbar-item">Categories</li>
@@ -32,9 +30,9 @@ const Main = ({ type }) => {
 
       <div id="showcase">
         <div className="showcase-container">
-          <h2>Música para todos.</h2>
-          <p>Milhões de músicas à sua escolha. E nem precisa de cartão de crédito.</p>
-          <button className="btn-primary">Obtenha o Spotify Free</button>
+          <h2>Music, music and music.</h2>
+          <p>Bringing the world of music closer to you.</p>
+          <button className="btn-primary">join us</button>
         </div>
       </div>
 
