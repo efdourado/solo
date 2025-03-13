@@ -44,6 +44,7 @@ a {
   text-decoration: none;
   } a:hover {
       text-decoration: underline;
+      transform: scale(1.05);
 }
 
 img {
@@ -71,21 +72,29 @@ img {
   } .btn-primary:hover {
       background: var(--light-red);
       cursor: pointer;
-} .btn-sec {
-    margin-left: 20px;
+} 
+
+
+
+
+
+.btn-sec {
+    margin-left: 10px;
     background: transparent;
     color: white;
     text-transform: uppercase;
-    padding: 5px 30px;
+    padding: 4px 20px;
     border: 1px solid var(--red);
-    border-radius: 30px;
+    border-radius: 20px;
     letter-spacing: 1px;
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
     font-weight: bold;
     transition: all 300ms ease;
     } .btn-sec:hover {
         background: var(--light-red);
         cursor: pointer;
 }
+
 
 .logo {
   height: 30px;
@@ -99,40 +108,67 @@ img {
   top: 0;
   width: 100%;
   z-index: 10;
+  height: 60px;
 } #navbar .navbar-container {
     width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 15px 0;
   } #navbar .navbar-items {
       display: flex;
       list-style: none;
     } #navbar .navbar-items li {
-        padding: 0 20px;
+        padding: 0 15px;
         transition: color 300ms ease, border-bottom 300ms ease;
         flex-grow: 1;
         justify-content: center;
       } #navbar .navbar-items li:hover, #navbar .navbar-items li.active {
           color: var(--light-red);
           border-bottom: 1px solid var(--light-red);
-        }   #navbar .navbar-items li:nth-child(3) {
-              border-right: 1px solid white;
+        } #navbar .navbar-items li:nth-child(3) {
+            border-right: 1px solid white;
+
+          } #navbar .navbar-items li:nth-child(4) {
+              margin-left: 20px;
+              background: transparent;
+              border: 1px solid var(--red);
+              padding: 0px 20px;
+              border-radius: 20px;
+              transition: background 300ms ease, transform 150ms ease-in-out;
+              } #navbar .navbar-items li:nth-child(4):hover {
+                  background: var(--red);
+                  color: white;
+                  cursor: pointer;
 }
-@media (max-width: 768px) {
-  #navbar .navbar-container {
-    padding: 10px 0;
-  } #navbar .navbar-items {
-      align-items: center;
-      width: 100%;
+@media (max-width: 1024px) {
+  #navbar {
+    height: 45px;
+  } #navbar .navbar-container {
+      width: 98%;
     } #navbar .navbar-items li {
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
+        padding: 0 8px;
+        font-size: 0.85rem;
+      }
+} @media (max-width: 768px) {
+    #navbar {
+      height: 40px;
+    } #navbar .navbar-items li {
+        padding: 0 6px;
+        font-size: 0.75rem;
+      }
+  } @media (max-width: 480px) {
+      #navbar {
+        height: 35px;
+      } #navbar .navbar-items li {
+          padding: 0 4px;
+          font-size: 0.7rem;
 } }
 
+
+
 #showcase {
-	height: clamp(40vh, 55vh, 70vh);
+	height: clamp(40vh, 50vh, 60vh);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -147,20 +183,34 @@ img {
       align-items: center;
       padding: 0 5%;
     } #showcase .showcase-container h2 {
-        font-size: clamp(2.5rem, 5vw, 5rem);
+        font-size: clamp(1.8rem, 4vw, 6rem);
       } #showcase .showcase-container p {
           margin: 15px 0;
-          font-size: clamp(0.875rem, 2vw, 1.2rem);
+          font-size: clamp(0.75rem, 1.5vw, 1.1rem);
           max-width: 800px;
 }
-@media (max-width: 768px) {
-  #showcase {
-    height: 45vh;
-  } #showcase .showcase-container h2 {
-      font-size: 3rem;
-    } #showcase .showcase-container p {
-        font-size: 1rem;
+@media (max-width: 1024px) {
+  #showcase .showcase-container h2 {
+    font-size: 2.8rem;
+  } #showcase .showcase-container p {
+      font-size: 1rem;
+    }
+} @media (max-width: 768px) {
+    #showcase {
+      height: 40vh;
+    } #showcase .showcase-container h2 {
+        font-size: 2.2rem;
+      } #showcase .showcase-container p {
+          font-size: 0.9rem;
+        }
+  } @media (max-width: 480px) {
+      #showcase .showcase-container h2 {
+        font-size: 1.8rem;
+      } #showcase .showcase-container p {
+          font-size: 0.8rem;
 } }
+
+
 
 #footer {
 	background: black;
@@ -261,6 +311,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: var(--border-radius-l);
   align-items: center;
   transition: background-color var(--transition-function) var(--transition-duration);
 } .single-item:hover {

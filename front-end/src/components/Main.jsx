@@ -21,7 +21,7 @@ const Main = ({ type }) => {
           <img src={logoSpotify} alt="logo do Spotify" className="logo" />
         </Link>
           <ul className="navbar-items">
-            {["Home", "Categories", "About us"].map((item) => (
+            {["Home", "Categories", "About us", "Log In"].map((item) => (
               <li
                 key={item}
                 className={`navbar-item ${selected === item ? "active" : ""}`}
@@ -30,7 +30,6 @@ const Main = ({ type }) => {
                 {item}
               </li>
             ))}
-            <button className="btn-sec">Log In</button>
           </ul>
         </div>
       </nav>
