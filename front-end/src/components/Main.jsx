@@ -6,9 +6,9 @@ import brasilFlag from "../assets/brasil.png";
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from 'react-router-dom';
 
 const Main = ({ type }) => {
   const [selected, setSelected] = useState("Home");
@@ -17,7 +17,9 @@ const Main = ({ type }) => {
     <>
       <nav id="navbar">
         <div className="navbar-container">
+        <Link to="/">
           <img src={logoSpotify} alt="logo do Spotify" className="logo" />
+        </Link>
           <ul className="navbar-items">
             {["Home", "Categories", "About us"].map((item) => (
               <li
@@ -28,7 +30,7 @@ const Main = ({ type }) => {
                 {item}
               </li>
             ))}
-            <button className="btn-secondary">Log In</button>
+            <button className="btn-sec">Log In</button>
           </ul>
         </div>
       </nav>
@@ -92,8 +94,6 @@ const Main = ({ type }) => {
 
           <div className="socials">
             <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faTwitter} />
-            <FontAwesomeIcon icon={faFacebookF} />
           </div>
         </div>
 
