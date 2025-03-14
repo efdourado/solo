@@ -152,7 +152,7 @@ img {
 
 
 #showcase {
-	height: clamp(40vh, 50vh, 60vh);
+	height: clamp(30vh, 50vh, 80vh);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -173,27 +173,21 @@ img {
           font-size: clamp(0.75rem, 1.5vw, 1.1rem);
           max-width: 800px;
 }
-@media (max-width: 1024px) {
-  #showcase .showcase-container h2 {
-    font-size: 2.8rem;
-  } #showcase .showcase-container p {
-      font-size: 1rem;
-    }
-} @media (max-width: 768px) {
+@media (max-width: 1200px) {
+  #showcase {
+      height: 40vh;
+    } #showcase .showcase-container h2 {
+        font-size: 2.8rem;
+      } #showcase .showcase-container p {
+          font-size: 1rem;
+        } 
+} @media (max-width: 600px) {
     #showcase {
       height: 30vh;
     } #showcase .showcase-container h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       } #showcase .showcase-container p {
           font-size: 0.9rem;
-        }
-  } @media (max-width: 480px) {
-      #showcase {
-        height: 20vh;
-      } #showcase .showcase-container h2 {
-          font-size: 1.8rem;
-        } #showcase .showcase-container p {
-            font-size: 0.8rem;
 } }
 
 
