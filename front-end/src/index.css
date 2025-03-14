@@ -12,7 +12,8 @@
   --green-950: hsl(141deg 75% 5%);
   --green-1000: hsl(141deg 75% 2.5%);
   --green-1000-25: hsl(141deg 75% 2.5% / 25%);
-
+  
+  --dark-red: #130200;
   --red: #c61c02; /* rgba(198, 28, 2, 0.6) */
 	--light-red: #cb321b;
 	--blue: #2b2d42;
@@ -76,26 +77,6 @@ img {
 
 
 
-
-
-.btn-sec {
-    margin-left: 10px;
-    background: transparent;
-    color: white;
-    text-transform: uppercase;
-    padding: 4px 20px;
-    border: 1px solid var(--red);
-    border-radius: 20px;
-    letter-spacing: 1px;
-    font-size: clamp(0.75rem, 1vw, 0.9rem);
-    font-weight: bold;
-    transition: all 300ms ease;
-    } .btn-sec:hover {
-        background: var(--light-red);
-        cursor: pointer;
-}
-
-
 .logo {
   height: 30px;
 }
@@ -118,6 +99,7 @@ img {
   } #navbar .navbar-items {
       display: flex;
       list-style: none;
+      align-items: center;
     } #navbar .navbar-items li {
         padding: 0 15px;
         transition: color 300ms ease, border-bottom 300ms ease;
@@ -133,9 +115,11 @@ img {
               margin-left: 20px;
               background: transparent;
               border: 1px solid var(--red);
-              padding: 0px 20px;
+              padding: 5px 20px;
               border-radius: 20px;
               transition: background 300ms ease, transform 150ms ease-in-out;
+              display: flex;
+              align-items: center;
               } #navbar .navbar-items li:nth-child(4):hover {
                   background: var(--red);
                   color: white;
@@ -173,7 +157,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	color: white;
-	background: url("../public/background.jpg") center center/cover;
+	background: url("/background.jpg") center center/cover;
 	background-color: rgba(0, 0, 0, 0.55);
 	background-blend-mode: color;
   text-align: center;

@@ -85,7 +85,7 @@ const Main = ({ type }) => {
           </ul>
 
           <ul className="footer-menu">
-            <p>Links úteis</p>
+            <p>Links</p>
             <li className="footer-menu-item">Ajuda</li>
             <li className="footer-menu-item">Player da Web</li>
             <li className="footer-menu-item">Aplicativo móvel grátis</li>
