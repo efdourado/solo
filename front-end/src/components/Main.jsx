@@ -1,7 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
-import logoSpotify from "../assets/logo/spotify-logo2.png";
-import brasilFlag from "../assets/brasil.png";
+import logoSpotify from "../assets/logo/spotify-logo.png";
+import brFlag from "../assets/brasil.png";
 
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
@@ -67,7 +67,7 @@ const Main = ({ type }) => {
 
       <footer id="footer">
         <div className="footer-content">
-          <img src={logoSpotify} alt="logo do Spotify" className="logo"/>
+          <img src={logoSpotify} alt="logo do spotify" className="logo"/>
           <ul className="footer-menu">
             <p>Company</p>
             <li className="footer-menu-item">About</li>
@@ -92,7 +92,7 @@ const Main = ({ type }) => {
           </ul>
 
           <div className="socials">
-            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faInstagram} className="socials-i" />
           </div>
         </div>
 
@@ -108,7 +108,7 @@ const Main = ({ type }) => {
           <div className="rights">
             <div className="country">
               <p>Brasil</p>
-              <img src={brasilFlag} alt="Br Flag" className="brazil-flag"/>
+              <img src={brFlag} alt="Br Flag" className="br-flag"/>
             </div>
             <p>&copy; 2025 Spotify AB</p>
           </div>

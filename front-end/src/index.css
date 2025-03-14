@@ -1,24 +1,7 @@
 :root {
-  --green-50: hsl(141deg 75% 90%);
-  --green-100: hsl(141deg 75% 85%);
-  --green-200: hsl(141deg 75% 70%);
-  --green-300: hsl(141deg 75% 60%);
-  --green-400: hsl(141deg 75% 50%);
-  --green-500: hsl(141deg 75% 45%);
-  --green-600: hsl(141deg 75% 35%);
-  --green-700: hsl(141deg 75% 25%);
-  --green-800: hsl(141deg 75% 15%);
-  --green-900: hsl(141deg 75% 10%);
-  --green-950: hsl(141deg 75% 5%);
-  --green-1000: hsl(141deg 75% 2.5%);
-  --green-1000-25: hsl(141deg 75% 2.5% / 25%);
-  
-  --dark-red: #130200;
-  --red: #c61c02; /* rgba(198, 28, 2, 0.6) */
+  --red: #c61c02;
 	--light-red: #cb321b;
-	--blue: #2b2d42;
-	--blue-gray: #8d99ae;
-  --light-gray: #edf2f4;
+	--gray: #919496;
 
   --transition-duration: 200ms;
   --transition-function: ease;
@@ -75,8 +58,6 @@ img {
       cursor: pointer;
 } 
 
-
-
 .logo {
   height: 30px;
 }
@@ -91,7 +72,7 @@ img {
   z-index: 10;
   height: 60px;
 } #navbar .navbar-container {
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,8 +84,6 @@ img {
     } #navbar .navbar-items li {
         padding: 0 15px;
         transition: color 300ms ease, border-bottom 300ms ease;
-        flex-grow: 1;
-        justify-content: center;
       } #navbar .navbar-items li:hover, #navbar .navbar-items li.active {
           color: var(--light-red);
           border-bottom: 1px solid var(--light-red);
@@ -112,44 +91,33 @@ img {
             border-right: 1px solid white;
 
           } #navbar .navbar-items li:nth-child(4) {
-              margin-left: 20px;
+              margin-left: 30px;
               background: transparent;
               border: 1px solid var(--red);
               padding: 5px 20px;
               border-radius: 20px;
               transition: background 300ms ease, transform 150ms ease-in-out;
-              display: flex;
-              align-items: center;
               } #navbar .navbar-items li:nth-child(4):hover {
                   background: var(--red);
                   color: white;
                   cursor: pointer;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   #navbar {
-    height: 45px;
+    height: 50px;
   } #navbar .navbar-container {
       width: 98%;
     } #navbar .navbar-items li {
         padding: 0 8px;
         font-size: 0.85rem;
       }
-} @media (max-width: 768px) {
+} @media (max-width: 640px) {
     #navbar {
-      height: 40px;
+      height: 45px;
     } #navbar .navbar-items li {
         padding: 0 6px;
         font-size: 0.75rem;
-      }
-  } @media (max-width: 480px) {
-      #navbar {
-        height: 35px;
-      } #navbar .navbar-items li {
-          padding: 0 4px;
-          font-size: 0.7rem;
 } }
-
-
 
 #showcase {
 	height: clamp(30vh, 50vh, 80vh);
@@ -173,17 +141,17 @@ img {
           font-size: clamp(0.75rem, 1.5vw, 1.1rem);
           max-width: 800px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   #showcase {
-      height: 40vh;
+      height: 42vh;
     } #showcase .showcase-container h2 {
         font-size: 2.8rem;
       } #showcase .showcase-container p {
           font-size: 1rem;
         } 
-} @media (max-width: 600px) {
+} @media (max-width: 640px) {
     #showcase {
-      height: 30vh;
+      height: 32vh;
     } #showcase .showcase-container h2 {
         font-size: 2rem;
       } #showcase .showcase-container p {
@@ -198,27 +166,27 @@ img {
 	padding: 80px 0;
   } #footer .footer-content {
       display: flex;
-      width: 90%;
+      width: 80%;
       margin: auto;
       justify-content: space-between;
     } #footer .footer-content .footer-menu {
-        margin: 0 60px;
+        margin: 0 20px;
         list-style: none;
+        padding: 0;
       } #footer .footer-content .footer-menu .footer-menu-item {
-          margin: 25px 0;
+          margin: 20px 0;
           transition: all 300ms ease;
         } #footer .footer-content .footer-menu .footer-menu-item:hover {
-            color: var(--default-green);
+            color: var(--light-red);
             cursor: pointer;
           } #footer .footer-content .footer-menu p {
               text-transform: uppercase;
-              color: #919496;
+              color: var(--gray);
               font-size: 0.8rem;
 }
 .socials {
 	display: flex;
   } .socials i {
-      margin: 0 20px;
       font-size: 1.7rem;
       transition: all 300ms ease;
     } .socials i:hover {
@@ -228,37 +196,36 @@ img {
 .footer-info {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: center;
 	width: 60%;
 	margin: auto;
-	font-weight: bold;
-	color: #919496;
+	color: var(--gray);
 	font-size: 0.75rem;
 	padding-top: 50px;
   } .footer-info .footer-info-items {
       display: flex;
       list-style: none;
+      padding: 0;
+      gap: 15px;
     } .footer-info .footer-info-items .footer-info-item {
-        margin: 0 10px;
         transition: all 300ms ease;
       } .footer-info .footer-info-items .footer-info-item:hover {
           color: var(--light-red);
           cursor: pointer;
-        } .footer-info .rights .country {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 10px;
-          } .footer-info .rights .country p {
-              transition: all 300ms ease;
-            } .footer-info .rights .country p:hover {
-                color: var(--light-red);
-                cursor: pointer;
-              } .footer-info .rights .country .brazil-flag {
-                  height: 20px;
-                  width: auto;
-                  display: inline-block;
-                  margin-left: 10px;
+        } .rights {
+            text-align: right;
+          } .footer-info .rights .country {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            } .footer-info .rights .country p {
+                transition: all 300ms ease;
+              } .footer-info .rights .country p:hover {
+                  color: var(--light-red);
+                  cursor: pointer;
+                } .footer-info .rights .country .br-flag {
+                    height: 20px;
+                    width: auto;
 }
 
 .item-list {
@@ -513,7 +480,7 @@ img {
     transition-duration: var(--transition-duration);
 } .player__icon:hover {
     transform: scale(105%);
-    color: var(--green-300);
+    color: var(--red);
 } .player__icon--play {
     font-size: 35px;
 } .player__progress {
