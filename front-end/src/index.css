@@ -181,17 +181,19 @@ img {
     }
 } @media (max-width: 768px) {
     #showcase {
-      height: 40vh;
+      height: 30vh;
     } #showcase .showcase-container h2 {
         font-size: 2.2rem;
       } #showcase .showcase-container p {
           font-size: 0.9rem;
         }
   } @media (max-width: 480px) {
-      #showcase .showcase-container h2 {
-        font-size: 1.8rem;
-      } #showcase .showcase-container p {
-          font-size: 0.8rem;
+      #showcase {
+        height: 20vh;
+      } #showcase .showcase-container h2 {
+          font-size: 1.8rem;
+        } #showcase .showcase-container p {
+            font-size: 0.8rem;
 } }
 
 
