@@ -8,8 +8,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faInstagram, faTiktok, faPinterest, faYoutube, faReddit, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faBarsStaggered, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faTiktok, faPinterest, faYoutube, faReddit } from "@fortawesome/free-brands-svg-icons";
+import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 
 
 const Main = ({ type }) => {
@@ -27,7 +27,7 @@ const Main = ({ type }) => {
             {[{ name: "Home", path: "/" }, { name: "Categories", path: "/" }, { name: "Log In", path: "/" }].map((item) => (
               <li
                 key={item.name}
-                className={`navbar-item ${selected === item.name ? "active" : ""}`}
+                className={selected === item.name ? "active" : ""}
                 onClick={() => setSelected(item.name)}
               >
                 <Link to={item.path}>{item.name}</Link>
@@ -45,7 +45,6 @@ const Main = ({ type }) => {
         </div>
       </div>
 
-
       {type === "artists" || type === undefined ? (
         <ItemList
           title="Artists"
@@ -55,7 +54,6 @@ const Main = ({ type }) => {
           idPath="/artist"
         />
       ) : null}
-
       {type === "songs" || type === undefined ? (
         <ItemList
           title="Songs"
@@ -65,6 +63,7 @@ const Main = ({ type }) => {
           idPath="/song"
         />
       ) : null}
+
 
 
       <footer id="footer">
@@ -78,9 +77,9 @@ const Main = ({ type }) => {
                   className="footer-logo" 
                 />
               </div>
-              <p className="brand-tagline">Sound in Motion, Silence in Soul</p>
+              <p className="brand-tagline">Sound in Motion, Silence in Soul.</p>
               <div className="social-links">
-                {[faGithub, faInstagram, faTiktok, faPinterest, faYoutube, faReddit].map((icon, index) => (
+                {[ faInstagram, faTiktok, faPinterest, faYoutube, faReddit ].map((icon, index) => (
                   <a key={index} href="#" className="social-link">
                     <FontAwesomeIcon icon={icon} className="social-icon" />
                   </a>
@@ -89,9 +88,15 @@ const Main = ({ type }) => {
             </div>
 
             <div className="nav-sections"> {[
-                { title: 'Explore', links: ["About Us", "Site Map", "Help Center", "Report a Bug", "FAQs", "Contact Us"] },
-                { title: 'Content', links: ["Artist Interviews", "Behind-the-Scenes", "Music Downloads", "Early Access", "Live Events"] },
-                { title: 'Community', links: ["Free Samples", "Share Music", "Meetups", "Forums", "Fan Voting"] },
+                { title: 'Explore', links: [
+                  "About Us", "Site Map", "Help Center", "Report a Bug", "FAQs", "Contact Us"
+                ]},
+                { title: 'Content', links: [
+                  "Artist Interviews", "Behind-the-Scenes", "Music Downloads", "Early Access", "Live Events"
+                ]},
+                { title: 'Community', links: [
+                  "Free Samples", "Share Music", "Meetups", "Forums", "Fan Voting"
+                ]},
               ].map(({ title, links }) => (
                 <div key={title} className="nav-group">
                   <h5 className="nav-title">{title}</h5>
@@ -117,10 +122,9 @@ const Main = ({ type }) => {
                   <span className="button-arrow">→</span>
                 </button>
               </form>
-              <div className="legal-links">
-                {["Privacy", "Cookies", "Terms & Conditions"].map(item => (
-                  <a key={item} href="#" className="legal-item">{item}</a>
-                ))}
+              <div className="legal-links">{[ "Privacy", "Cookies", "Terms & Conditions" ].map(item => (
+                    <a key={item} href="#" className="legal-item">{item}</a>
+              ))}
               </div>
             </div>
           </div>

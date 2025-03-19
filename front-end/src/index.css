@@ -21,8 +21,8 @@
 
 body {
   font-family: "helvetica", sans-serif;
-  background-color: #101B1F;
-  color: white;
+  background-color: #e0e0e0;
+  color: black;
 }
 
 img {
@@ -50,7 +50,7 @@ a:hover {
 .btn-prim {
   margin-top: 15px;
   background: var(--red);
-	color: white;
+	color: #e0e0e0;
 	text-transform: uppercase;
 	padding: 15px 60px;
 	border: none;
@@ -73,6 +73,8 @@ a:hover {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+  font-weight: bold;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -91,7 +93,7 @@ a:hover {
   align-items: center;
 }
 #navbar .navbar-items li {
-  padding: 0 15px;
+  padding: 0 15px 8px;
   transition: color 300ms ease, border-bottom 300ms ease;
 }
 #navbar .navbar-items li:hover, #navbar .navbar-items li.active {
@@ -99,19 +101,20 @@ a:hover {
   border-bottom: 1px solid var(--light-red);
 }
 #navbar .navbar-items li:nth-child(2) {
-  border-right: 1px solid white;
+  padding-right: 20px;
+  border-right: 1px solid #e0e0e0;
 }
 #navbar .navbar-items li:nth-child(3) {
   margin-left: 25px;
   background: transparent;
   border: 1px solid var(--red);
-  padding: 5px 20px;
+  padding: 8px 20px;
   border-radius: 20px;
   transition: background 300ms ease, transform 150ms ease-in-out;
 }
 #navbar .navbar-items li:nth-child(3):hover {
   background: var(--red);
-  color: white;
+  color: #e0e0e0;
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -143,7 +146,7 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: white;
+	color: #e0e0e0;
 	background: url("/background.jpg") center center/cover;
 	background-color: rgba(0, 0, 0, 0.55);
 	background-blend-mode: color;
@@ -266,7 +269,7 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: #e0e0e0;
   margin-bottom: 0.5rem;
 }
 
@@ -297,7 +300,7 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: #e0e0e0;
 }
 
 .newsletter-form {
@@ -310,7 +313,7 @@ a:hover {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.8rem;
-  color: #fff;
+  color: #e0e0e0;
   font-size: 0.9rem;
   border-radius: 4px;
   transition: border-color 0.3s ease;
@@ -321,7 +324,7 @@ a:hover {
 }
 .submit-button {
   background: var(--light-red);
-  color: white;
+  color: #e0e0e0;
   border: none;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -361,6 +364,18 @@ a:hover {
 }
 
 /* ================================================================*/
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  width: 90%;
+  border-radius: 3%;
+  background-color: black;
+  color: #e0e0e0;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 .item-list {
   padding: 30px;
@@ -606,7 +621,7 @@ a:hover {
   grid-template-columns: 1fr 3fr 1fr;
   place-items: center;
   background-color: black;
-  color: white;
+  color: #e0e0e0;
   padding: 16px 25px;
   gap: 15px;
 }
@@ -696,7 +711,7 @@ a:hover {
   --_progress: 0;
   height: 100%;
   width: var(--_progress);
-  background-color: white;
+  background-color: #e0e0e0;
   transition: width var(--transition-function) var(--transition-duration);
 }
 
