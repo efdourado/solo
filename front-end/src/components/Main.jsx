@@ -1,14 +1,16 @@
 import React from "react";
 import ItemList from "./ItemList";
-import logoSpotify from "../assets/logo/spotify-logo.png";
-import brFlag from "../assets/brasil.png";
+import logo from "../assets/logo/logoD.png";
 
 import { artistArray } from "../assets/database/artists";
 import { songsArray } from "../assets/database/songs";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { Link } from 'react-router-dom';
+import { faGithub, faInstagram, faTiktok, faPinterest, faYoutube, faReddit, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faBarsStaggered, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 
 const Main = ({ type }) => {
   const [selected, setSelected] = useState("Home");
@@ -17,29 +19,29 @@ const Main = ({ type }) => {
     <>
       <nav id="navbar">
         <div className="navbar-container">
-        <Link to="/">
-          <img src={logoSpotify} alt="logo do Spotify" className="logo" />
-        </Link>
+          <Link>
+            <FontAwesomeIcon icon={faBarsStaggered} style={{ fontSize: '21px' }}/>
+          </Link>
+
           <ul className="navbar-items">
-            {["Home", "Categories", "About us", "Log In"].map((item) => (
+            {[{ name: "Home", path: "/" }, { name: "Categories", path: "/" }, { name: "Log In", path: "/" }].map((item) => (
               <li
-                key={item}
-                className={`navbar-item ${selected === item ? "active" : ""}`}
-                onClick={() => setSelected(item)}
+                key={item.name}
+                className={`navbar-item ${selected === item.name ? "active" : ""}`}
+                onClick={() => setSelected(item.name)}
               >
-                {item}
-              </li>
+                <Link to={item.path}>{item.name}</Link>
+                </li>
             ))}
           </ul>
         </div>
       </nav>
 
-
       <div id="showcase">
         <div className="showcase-container">
           <h2>Music, music and music.</h2>
           <p>Bringing the world of music closer to you.</p>
-          <button className="btn-primary">join us</button>
+          <button className="btn-prim">join us</button>
         </div>
       </div>
 
@@ -66,51 +68,65 @@ const Main = ({ type }) => {
 
 
       <footer id="footer">
-        <div className="footer-content">
-          <img src={logoSpotify} alt="logo do spotify" className="logo"/>
-          <ul className="footer-menu">
-            <p>Company</p>
-            <li className="footer-menu-item">About</li>
-            <li className="footer-menu-item">Empregos</li>
-            <li className="footer-menu-item">For the record</li>
-          </ul>
-
-          <ul className="footer-menu">
-            <p>Comunidades</p>
-            <li className="footer-menu-item">Para Artistas</li>
-            <li className="footer-menu-item">Desenvolvedores</li>
-            <li className="footer-menu-item">Marcas</li>
-            <li className="footer-menu-item">Investidores</li>
-            <li className="footer-menu-item">Fornecedores</li>
-          </ul>
-
-          <ul className="footer-menu">
-            <p>Links</p>
-            <li className="footer-menu-item">Ajuda</li>
-            <li className="footer-menu-item">Player da Web</li>
-            <li className="footer-menu-item">Aplicativo móvel grátis</li>
-          </ul>
-
-          <div className="socials">
-            <FontAwesomeIcon icon={faInstagram} className="socials-i" />
-          </div>
-        </div>
-
-        <div className="footer-info">
-          <ul className="footer-info-items">
-            <li className="footer-info-item">Legal</li>
-            <li className="footer-info-item">Centro de Privacidade</li>
-            <li className="footer-info-item">Política de privacidade</li>
-            <li className="footer-info-item">Cookies</li>
-            <li className="footer-info-item">Sobre anúncios</li>
-          </ul>
-
-          <div className="rights">
-            <div className="country">
-              <p>Brasil</p>
-              <img src={brFlag} alt="Br Flag" className="br-flag"/>
+        <div className="footer-container">
+          <div className="footer-grid">
+            <div className="brand-section">
+              <div className="logo-wrapper">
+                <img 
+                  src={logo} 
+                  alt="logo do proj" 
+                  className="footer-logo" 
+                />
+              </div>
+              <p className="brand-tagline">Sound in Motion, Silence in Soul</p>
+              <div className="social-links">
+                {[faGithub, faInstagram, faTiktok, faPinterest, faYoutube, faReddit].map((icon, index) => (
+                  <a key={index} href="#" className="social-link">
+                    <FontAwesomeIcon icon={icon} className="social-icon" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <p>&copy; 2025 Spotify AB</p>
+
+            <div className="nav-sections"> {[
+                { title: 'Explore', links: ["About Us", "Site Map", "Help Center", "Report a Bug", "FAQs", "Contact Us"] },
+                { title: 'Content', links: ["Artist Interviews", "Behind-the-Scenes", "Music Downloads", "Early Access", "Live Events"] },
+                { title: 'Community', links: ["Free Samples", "Share Music", "Meetups", "Forums", "Fan Voting"] },
+              ].map(({ title, links }) => (
+                <div key={title} className="nav-group">
+                  <h5 className="nav-title">{title}</h5>
+                  <div className="nav-links">
+                    {links.map(link => (
+                      <a key={link} className="nav-link">{link}</a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="newsletter-section">
+              <h5 className="newsletter-title">Stay Connected</h5>
+              <form className="newsletter-form">
+                <input 
+                  type="email" 
+                  placeholder="Email address" 
+                  className="email-input" 
+                />
+                <button type="submit" className="submit-button">
+                  <span className="button-text">Subscribe</span>
+                  <span className="button-arrow">→</span>
+                </button>
+              </form>
+              <div className="legal-links">
+                {["Privacy", "Cookies", "Terms & Conditions"].map(item => (
+                  <a key={item} href="#" className="legal-item">{item}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="copyright-bar">
+            <span className="copyright-text">© 2025 DUDUPIZZAS</span>
           </div>
         </div>
       </footer>
